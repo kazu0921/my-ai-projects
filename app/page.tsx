@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import areas from "@/data/areas.json";
 
 export const metadata: Metadata = {
   title: "神奈川 医療対応 老人ホーム相談プラットフォーム",
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
       "胃ろう・経管栄養・インスリン注射・看取り対応など医療依存度が高い方向けの入居相談に特化。"
   }
 };
+
+type Area = {
+  slug: string;
+  name: string;
+};
+
+const areaList = areas as Area[];
 
 export default function HomePage() {
   return (
@@ -48,6 +56,24 @@ export default function HomePage() {
             <p>最短で空室・受け入れ可否を確認し、見学調整まで支援。</p>
           </div>
         </div>
+      </section>
+
+      <section className="section">
+        <h2>エリア別に相談する</h2>
+        <p>神奈川県内の市区町村別に受け入れ事情を確認できます。</p>
+        <div className="cards">
+          {areaList.map((area) => (
+            <div className="card" key={area.slug}>
+              <h3>{area.name}</h3>
+              <Link className="cta secondary" href={`/kanagawa/${area.slug}`}>
+                {area.name}の相談ページへ
+              </Link>
+            </div>
+          ))}
+        </div>
+        <Link className="cta" href="/kanagawa">
+          エリア一覧を見る
+        </Link>
       </section>
 
       <section className="section">

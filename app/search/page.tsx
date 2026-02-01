@@ -26,6 +26,11 @@ export default function SearchPage() {
           市区町村・費用帯・入居形態・医療対応条件で絞り込みが可能です。
           最新の空室状況は無料相談で確認できます。
         </p>
+        <div className="cta-row">
+          <Link className="cta secondary" href="/kanagawa">
+            エリア別の相談ページを見る
+          </Link>
+        </div>
       </section>
       <SearchClient facilities={facilityList} />
     </div>

@@ -27,6 +27,10 @@
 │   ├── facilities
 │   │   └── [slug]
 │   │       └── page.tsx             # 施設詳細ページ
+│   ├── kanagawa
+│   │   ├── [area]
+│   │   │   └── page.tsx             # エリア別ページ
+│   │   └── page.tsx                 # エリア一覧
 │   ├── search
 │   │   ├── SearchClient.tsx         # 検索 UI/ロジック（クライアント）
 │   │   └── page.tsx                 # 施設検索ページ
@@ -36,6 +40,7 @@
 │   ├── robots.ts                    # robots.txt
 │   └── sitemap.ts                   # sitemap.xml
 ├── data
+│   ├── areas.json                   # エリアページ定義
 │   ├── facilities.json              # 施設データ（正式ソース）
 │   └── inquiries.json               # 相談データ（ローカル保存）
 ├── lib
@@ -82,6 +87,8 @@
 ## MVP/v1 ページ一覧
 - `/` トップページ（サービス概要・強み・CTA）
 - `/search` 施設検索（絞り込み・並び替え）
+- `/kanagawa` エリア一覧
+- `/kanagawa/[area]` エリア別ページ（FAQ付き）
 - `/facilities/[slug]` 施設詳細
 - `/consultation` 相談フォーム
 - `/consultation/thanks` 送信完了
@@ -109,15 +116,24 @@
 
 ## 手動テスト手順（ユニットテストを実行できない場合）
 1. `/search` で市区町村や医療対応タグを切り替え、結果件数が変わることを確認
-2. `/facilities/[slug]` の地図リンクが Google Maps に遷移することを確認
-3. `/consultation` で未入力の状態で送信するとエラーメッセージが出ることを確認
-4. 正しい情報で送信すると `/consultation/thanks` に遷移し、`/data/inquiries.json` に追記されることを確認
-5. `/admin` で施設を追加・編集・削除できることを確認
+2. `/kanagawa/[area]` でFAQが表示されることを確認
+3. `/facilities/[slug]` の地図リンクが Google Maps に遷移することを確認
+4. `/consultation` で未入力の状態で送信するとエラーメッセージが出ることを確認
+5. 正しい情報で送信すると `/consultation/thanks` に遷移し、`/data/inquiries.json` に追記されることを確認
+6. `/admin` で施設を追加・編集・削除できることを確認
 
 ## テスト
 ```
 npm test
 ```
+
+## SEOチェックリスト
+- title / description が各ページで設定されている
+- OGPが設定されている
+- `/sitemap.xml` にエリアページが含まれている
+- `/robots.txt` が公開されている
+- エリアページにFAQ構造化データが入っている
+- トップ → エリア → 施設詳細 → 相談 の導線がつながっている
 
 ## 次にやる拡張案（箇条書き）
 - 管理画面で施設データの更新・承認フローを実装
@@ -144,6 +160,7 @@ Next.js なので Vercel の無料枠で公開できます。
 ### 公開後のチェックリスト（SEO / フォーム）
 - トップページが表示される（スマホでも確認）
 - `/search` で絞り込みが動く
+- `/kanagawa/[area]` のエリアページが表示される
 - `/facilities/[slug]` で詳細ページが表示される
 - 相談フォームが送信できる（本番はDB/メールへの切替を推奨）
 - `/admin` にログインでき、施設更新が反映される

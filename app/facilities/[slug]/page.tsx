@@ -114,9 +114,14 @@ export default function FacilityDetailPage({ params }: FacilityPageProps) {
           <p>
             受け入れ条件は日々変動します。無料相談で最新の受け入れ可否を確認してください。
           </p>
-          <Link className="cta" href="/consultation">
-            無料相談へ進む
-          </Link>
+          <div className="cta-row">
+            <Link className="cta" href="/consultation">
+              無料相談へ進む
+            </Link>
+            <Link className="cta secondary" href="/kanagawa">
+              エリア別ページを見る
+            </Link>
+          </div>
         </div>
       </section>
 
