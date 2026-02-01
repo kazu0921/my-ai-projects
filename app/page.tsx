@@ -1,4 +1,16 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "神奈川 医療対応 老人ホーム相談プラットフォーム",
+  description:
+    "神奈川全域で医療依存度が高い方の老人ホーム入居相談を最短でサポート。無料相談で空室・受け入れ可否を確認。",
+  openGraph: {
+    title: "神奈川 医療対応 老人ホーム相談プラットフォーム",
+    description:
+      "胃ろう・経管栄養・インスリン注射・看取り対応など医療依存度が高い方向けの入居相談に特化。"
+  }
+};
 
 export default function HomePage() {
   return (

@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "運営情報 | 神奈川 医療対応 老人ホーム相談",
-  description: "運営情報、免責事項、プライバシーポリシーを掲載。"
+  description: "運営情報、免責事項、プライバシーポリシーを掲載。",
+  openGraph: {
+    title: "運営情報 | 神奈川 医療対応 老人ホーム相談",
+    description: "運営情報、免責事項、プライバシーポリシーを掲載。"
+  }
 };
 
 export default function AboutPage() {

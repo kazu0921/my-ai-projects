@@ -3,7 +3,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "送信完了 | 神奈川 医療対応 老人ホーム相談",
-  description: "入居相談の送信完了ページ。相談内容を確認し、担当者から連絡します。"
+  description: "入居相談の送信完了ページ。相談内容を確認し、担当者から連絡します。",
+  openGraph: {
+    title: "送信完了 | 神奈川 医療対応 老人ホーム相談",
+    description: "入居相談の送信完了ページ。相談内容を確認し、担当者から連絡します。"
+  }
 };
 
 export default function ConsultationThanksPage() {
@@ -27,8 +31,12 @@ export default function ConsultationThanksPage() {
       </section>
 
       <section className="section">
-        <h2>次にご準備いただくこと</h2>
+        <h2>次のご案内</h2>
         <div className="cards">
+          <div className="card">
+            <h3>連絡方法の目安</h3>
+            <p>原則メールまたはお電話でご連絡します。日中にご連絡が取れる時間帯をお知らせください。</p>
+          </div>
           <div className="card">
             <h3>医療情報の整理</h3>
             <p>主治医の診断内容や医療処置の内容を簡単にメモしておくとスムーズです。</p>

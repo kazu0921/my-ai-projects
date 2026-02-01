@@ -4,7 +4,12 @@ import ConsultationForm from "./ConsultationForm";
 export const metadata: Metadata = {
   title: "無料相談 | 神奈川 医療対応 老人ホーム相談",
   description:
-    "医療依存度が高い方向けの入居相談フォーム。名前・メール・電話・相談内容だけで最短相談が可能。"
+    "医療依存度が高い方向けの入居相談フォーム。名前・メール・電話・相談内容だけで最短相談が可能。",
+  openGraph: {
+    title: "無料相談 | 神奈川 医療対応 老人ホーム相談",
+    description:
+      "医療依存度が高い方向けの入居相談フォーム。名前・メール・電話・相談内容だけで最短相談が可能。"
+  }
 };
 
 export default function ConsultationPage() {
