@@ -1,0 +1,29 @@
+[
+  {
+    "id": "yokohama-medical-home",
+    "name": "みなとみらい医療対応ホーム",
+    "area": "横浜市西区",
+    "medicalSupport": ["胃ろう", "経管栄養", "インスリン注射", "看取り"],
+    "monthlyCost": "月額 22〜28万円",
+    "availability": "空室あり（概況）",
+    "summary": "医療依存度の高い方の受け入れ実績が多い提携施設。"
+  },
+  {
+    "id": "kawasaki-care",
+    "name": "川崎メディカルケアレジデンス",
+    "area": "川崎市中原区",
+    "medicalSupport": ["経管栄養", "インスリン注射", "在宅医療移行"],
+    "monthlyCost": "月額 19〜24万円",
+    "availability": "空室確認中",
+    "summary": "24時間看護体制で緊急入居にも対応。"
+  },
+  {
+    "id": "fujisawa-support",
+    "name": "藤沢メディカルサポートホーム",
+    "area": "藤沢市",
+    "medicalSupport": ["胃ろう", "看取り"],
+    "monthlyCost": "月額 20〜26万円",
+    "availability": "空室わずか",
+    "summary": "看取りを前提とした支援体制を整備。"
+  }
+]
