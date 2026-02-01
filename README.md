@@ -8,7 +8,15 @@
 ├── app
 │   ├── about
 │   │   └── page.tsx                 # 運営情報（免責・プライバシー）
+│   ├── admin
+│   │   ├── AdminClient.tsx          # 管理ページUI
+│   │   └── page.tsx                 # 管理ページ
 │   ├── api
+│   │   ├── admin
+│   │   │   ├── facilities
+│   │   │   │   └── route.ts         # 施設CRUD API
+│   │   │   └── login
+│   │   │       └── route.ts         # 管理ログインAPI
 │   │   └── inquiries
 │   │       └── route.ts             # 相談フォーム送信 API
 │   ├── consultation
@@ -78,6 +86,7 @@
 - `/consultation` 相談フォーム
 - `/consultation/thanks` 送信完了
 - `/about` 運営情報（免責/プライバシー）
+- `/admin` 施設管理ページ（簡易ログイン）
 - `/sitemap.xml` SEO用サイトマップ
 - `/robots.txt` クロール制御
 
@@ -85,11 +94,25 @@
 - 送信先はローカル保存（`/data/inquiries.json` へ追記）です。
 - 本番運用時は DB またはメール送信に置き換えてください。
 
+## 管理ページの運用手順（非エンジニア向け）
+1. 環境変数 `ADMIN_PASSWORD` を設定
+   - ローカルの場合は `.env.local` を作成して `ADMIN_PASSWORD=任意のパスワード` を記載
+   - Vercelの場合は「Settings → Environment Variables」で追加
+2. `/admin` にアクセス
+3. 管理パスワードを入力してログイン
+4. 施設一覧から編集したい施設を選ぶ
+5. フォームで内容を更新して「保存する」
+6. 新規追加の場合は「新規作成フォーム」→ 必須項目を入力して保存
+7. 削除する場合は施設を選択して「削除する」
+
+> 保存先は `data/facilities.json` です。将来DBに切り替える場合は API ルート（`app/api/admin/facilities/route.ts`）を置き換えます。
+
 ## 手動テスト手順（ユニットテストを実行できない場合）
 1. `/search` で市区町村や医療対応タグを切り替え、結果件数が変わることを確認
 2. `/facilities/[slug]` の地図リンクが Google Maps に遷移することを確認
 3. `/consultation` で未入力の状態で送信するとエラーメッセージが出ることを確認
 4. 正しい情報で送信すると `/consultation/thanks` に遷移し、`/data/inquiries.json` に追記されることを確認
+5. `/admin` で施設を追加・編集・削除できることを確認
 
 ## テスト
 ```
@@ -116,13 +139,14 @@ Next.js なので Vercel の無料枠で公開できます。
 8. 数分後に発行されるURLで公開完了
 
 ### 使う環境変数
-このプロジェクトは**環境変数不要**です。（現時点）
+- `ADMIN_PASSWORD`（管理ページのログイン用）
 
 ### 公開後のチェックリスト（SEO / フォーム）
 - トップページが表示される（スマホでも確認）
 - `/search` で絞り込みが動く
 - `/facilities/[slug]` で詳細ページが表示される
 - 相談フォームが送信できる（本番はDB/メールへの切替を推奨）
+- `/admin` にログインでき、施設更新が反映される
 - `/sitemap.xml` が表示される
 - `/robots.txt` が表示される
 - SNSシェア用のOGPが反映されている（タイトル/説明文）

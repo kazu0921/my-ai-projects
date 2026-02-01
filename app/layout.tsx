@@ -48,6 +48,7 @@ export default function RootLayout({
               <Link href="/search">施設検索</Link>
               <Link href="/consultation">無料相談</Link>
               <Link href="/about">運営情報</Link>
+              <Link href="/admin">管理</Link>
             </nav>
           </div>
         </header>
