@@ -102,3 +102,27 @@ npm test
 - 施設掲載の申請フロー（提携審査/契約の自動化）
 - 空室情報の更新をCSV/フォームで自動化
 - 医師・看護師の監修情報をCMSで管理
+
+## Vercelでの公開手順（非エンジニア向け）
+Next.js なので Vercel の無料枠で公開できます。
+
+1. GitHubにリポジトリをアップロード（まだの場合）
+2. ブラウザで https://vercel.com/ にアクセス
+3. 「Sign Up」→「Continue with GitHub」でログイン
+4. Vercelのダッシュボードで「Add New...」→「Project」
+5. 対象のGitHubリポジトリを選択して「Import」
+6. Framework Preset が「Next.js」になっていることを確認
+7. Build Command / Output Directory は空欄のまま「Deploy」
+8. 数分後に発行されるURLで公開完了
+
+### 使う環境変数
+このプロジェクトは**環境変数不要**です。（現時点）
+
+### 公開後のチェックリスト（SEO / フォーム）
+- トップページが表示される（スマホでも確認）
+- `/search` で絞り込みが動く
+- `/facilities/[slug]` で詳細ページが表示される
+- 相談フォームが送信できる（本番はDB/メールへの切替を推奨）
+- `/sitemap.xml` が表示される
+- `/robots.txt` が表示される
+- SNSシェア用のOGPが反映されている（タイトル/説明文）
