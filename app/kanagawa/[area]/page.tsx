@@ -80,7 +80,7 @@ export default function AreaDetailPage({ params }: AreaPageProps) {
     return (
       <section className="hero">
         <h1>エリアが見つかりませんでした</h1>
-        <Link className="cta" href="/kanagawa">
+        <Link className="btn" href="/kanagawa">
           エリア一覧に戻る
         </Link>
       </section>
@@ -100,10 +100,10 @@ export default function AreaDetailPage({ params }: AreaPageProps) {
         <h1>{area.name} 医療対応 老人ホーム相談</h1>
         <p>{area.summary}</p>
         <div className="cta-row">
-          <Link className="cta" href="/consultation">
+          <Link className="btn btn-consult" href="/consultation">
             無料相談を始める
           </Link>
-          <Link className="cta secondary" href="/search">
+          <Link className="btn" href="/search">
             施設検索をする
           </Link>
         </div>
@@ -133,7 +133,7 @@ export default function AreaDetailPage({ params }: AreaPageProps) {
           {areaFacilities.length === 0 ? (
             <div className="card">
               <p>該当エリアの施設情報は相談窓口でご案内します。</p>
-              <Link className="cta" href="/consultation">
+              <Link className="btn btn-consult" href="/consultation">
                 無料相談へ進む
               </Link>
             </div>
@@ -149,10 +149,10 @@ export default function AreaDetailPage({ params }: AreaPageProps) {
                 </p>
                 <p>対応医療: {facility.medicalSupport.join(" / ")}</p>
                 <div className="cta-row">
-                  <Link className="cta secondary" href={`/facilities/${facility.slug}`}>
+                  <Link className="btn" href={`/facilities/${facility.slug}`}>
                     施設詳細を見る
                   </Link>
-                  <Link className="cta" href="/consultation">
+                  <Link className="btn btn-consult" href="/consultation">
                     この施設について相談
                   </Link>
                 </div>
@@ -184,7 +184,7 @@ export default function AreaDetailPage({ params }: AreaPageProps) {
         <h2>相談窓口</h2>
         <div className="card">
           <p>受け入れ可否の確認は無料相談で最短対応します。</p>
-          <Link className="cta" href="/consultation">
+          <Link className="btn btn-consult" href="/consultation">
             無料相談へ進む
           </Link>
         </div>

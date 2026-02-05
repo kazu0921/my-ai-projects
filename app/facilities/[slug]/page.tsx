@@ -40,7 +40,7 @@ export default function FacilityDetailPage({ params }: FacilityPageProps) {
     return (
       <section className="hero">
         <h1>施設が見つかりませんでした</h1>
-        <Link className="cta" href="/search">
+        <Link className="btn" href="/search">
           施設検索に戻る
         </Link>
       </section>
@@ -68,10 +68,10 @@ export default function FacilityDetailPage({ params }: FacilityPageProps) {
         <h1>{facility.name}</h1>
         <p>{facility.summary}</p>
         <div className="cta-row">
-          <Link className="cta" href="/consultation">
+          <Link className="btn btn-consult" href="/consultation">
             この施設について相談する
           </Link>
-          <Link className="cta secondary" href="/search">
+          <Link className="btn" href="/search">
             施設一覧に戻る
           </Link>
         </div>
@@ -115,10 +115,10 @@ export default function FacilityDetailPage({ params }: FacilityPageProps) {
             受け入れ条件は日々変動します。無料相談で最新の受け入れ可否を確認してください。
           </p>
           <div className="cta-row">
-            <Link className="cta" href="/consultation">
+            <Link className="btn btn-consult" href="/consultation">
               無料相談へ進む
             </Link>
-            <Link className="cta secondary" href="/kanagawa">
+            <Link className="btn" href="/kanagawa">
               エリア別ページを見る
             </Link>
           </div>

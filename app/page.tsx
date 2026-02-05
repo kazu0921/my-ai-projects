@@ -3,109 +3,98 @@ import type { Metadata } from "next";
 import areas from "@/data/areas.json";
 
 export const metadata: Metadata = {
-  title: "神奈川 医療対応 老人ホーム相談プラットフォーム",
+  title: "医療対応 介護入居相談センター（神奈川）",
   description:
-    "神奈川全域で医療依存度が高い方の老人ホーム入居相談を最短でサポート。無料相談で空室・受け入れ可否を確認。",
+    "医療が必要になったときに頼れる、神奈川県全域の介護入居相談窓口。比較ではなく、状況整理と意思決定を丁寧に支援します。",
   openGraph: {
-    title: "神奈川 医療対応 老人ホーム相談プラットフォーム",
+    title: "医療対応 介護入居相談センター（神奈川）",
     description:
-      "胃ろう・経管栄養・インスリン注射・看取り対応など医療依存度が高い方向けの入居相談に特化。"
+      "焦りや情報疲れを抱えるご家族へ。医療対応が必要な方の介護入居相談を、中立的にサポートします。"
   }
 };
 
-type Area = {
-  slug: string;
-  name: string;
-};
-
+type Area = { slug: string; name: string };
 const areaList = areas as Area[];
 
 export default function HomePage() {
   return (
     <div>
       <section className="hero">
-        <span className="badge">神奈川全域対応・医療依存度が高い方専門</span>
-        <h1>医療が必要になっても、入れる老人ホームはあります。</h1>
+        <span className="badge">医療対応 介護入居相談センター（神奈川）</span>
+        <h1>
+          医療が必要になっても
+          <br />
+          入居できる介護施設は、あります。
+        </h1>
         <p>
-          胃ろう・経管栄養・インスリン注射・看取り対応など、医療依存度が高い方の入居先を最短でご案内します。
-          神奈川県内の提携施設のみを掲載し、無料相談で空室・受け入れ可否を確認します。
+          まだ決めなくて大丈夫です。
+          いまの状況を整理し、神奈川県内で受け入れ可能な候補を一緒に確認します。
         </p>
         <div className="cta-row">
-          <Link className="cta" href="/consultation">
-            無料相談を始める
+          <Link className="btn btn-consult" href="/consultation">
+            無料で相談する（24時間受付）
           </Link>
-          <Link className="cta secondary" href="/search">
-            施設を検索する
+          <Link className="btn" href="/kanagawa">
+            神奈川県の対応エリアを見る
           </Link>
         </div>
       </section>
 
       <section className="section">
-        <h2>サービス概要</h2>
+        <h2>この窓口の役割</h2>
         <div className="cards">
           <div className="card">
-            <h3>医療依存度が高い方向けに特化</h3>
-            <p>胃ろう・経管栄養・インスリン注射・看取り対応などの条件を重視。</p>
+            <h3>比較ではなく、相談</h3>
+            <p>ランキングや過剰な訴求ではなく、今必要な情報だけを整理してご案内します。</p>
           </div>
           <div className="card">
-            <h3>神奈川県内の提携施設のみ</h3>
-            <p>無断掲載は行わず、受け入れ確認ができる施設のみを掲載。</p>
+            <h3>公的機関に近い中立性</h3>
+            <p>売り込みを前提にせず、ご家族の不安と条件を優先して候補を絞ります。</p>
           </div>
           <div className="card">
-            <h3>相談から入居まで伴走</h3>
-            <p>最短で空室・受け入れ可否を確認し、見学調整まで支援。</p>
+            <h3>医療対応の確認を代行</h3>
+            <p>胃ろう・経管栄養・インスリン・看取りなど、受け入れ可否を確認します。</p>
           </div>
         </div>
       </section>
 
       <section className="section">
-        <h2>エリア別に相談する</h2>
-        <p>神奈川県内の市区町村別に受け入れ事情を確認できます。</p>
+        <h2>神奈川県全域に対応しています</h2>
+        <p>横浜市・川崎市・藤沢市・茅ヶ崎市・相模原市を含む市区町村別ページをご用意しています。</p>
         <div className="cards">
           {areaList.map((area) => (
             <div className="card" key={area.slug}>
               <h3>{area.name}</h3>
-              <Link className="cta secondary" href={`/kanagawa/${area.slug}`}>
+              <Link className="btn" href={`/kanagawa/${area.slug}`}>
                 {area.name}の相談ページへ
               </Link>
             </div>
           ))}
         </div>
-        <Link className="cta" href="/kanagawa">
-          エリア一覧を見る
-        </Link>
       </section>
 
       <section className="section">
-        <h2>強み</h2>
+        <h2>ご相談の進み方</h2>
         <div className="cards">
           <div className="card">
-            <h3>CV優先の導線</h3>
-            <p>24時間以内の折り返しを目指す体制で緊急性に対応。</p>
+            <h3>1. 状況をうかがう</h3>
+            <p>現在の医療処置、希望エリア、急ぎ度を確認します。</p>
           </div>
           <div className="card">
-            <h3>医療対応の見える化</h3>
-            <p>対応可能な医療処置を一覧で提示し、ミスマッチを防止。</p>
+            <h3>2. 候補を確認する</h3>
+            <p>受け入れ可否と費用感を照らし合わせ、候補を絞ります。</p>
           </div>
           <div className="card">
-            <h3>将来の他県展開を想定</h3>
-            <p>エリア別LPを増やせる構造で横展開が容易。</p>
+            <h3>3. 次の一歩を決める</h3>
+            <p>見学や手続きの進め方を、無理のない順序でご案内します。</p>
           </div>
         </div>
-      </section>
-
-      <section className="section">
-        <h2>まずは無料相談</h2>
-        <p>
-          医療対応の条件や希望エリアを伝えるだけで、受け入れ可能な施設を確認します。
-          迷ったら今すぐ無料相談をご利用ください。
-        </p>
         <div className="cta-row">
-          <Link className="cta" href="/consultation">
-            無料相談へ進む
+          <Link className="btn btn-consult" href="/consultation">
+            無料で相談する（24時間受付）
           </Link>
-          <Link className="cta secondary" href="/about">
-            運営情報を見る
+          <Link className="btn" href="/search">
+            施設検索ページを見る
           </Link>
         </div>
       </section>

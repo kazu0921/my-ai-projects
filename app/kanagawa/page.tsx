@@ -40,7 +40,7 @@ export default function KanagawaAreaPage() {
             <div className="card" key={area.slug}>
               <h3>{area.name}</h3>
               <p>{area.summary}</p>
-              <Link className="cta secondary" href={`/kanagawa/${area.slug}`}>
+              <Link className="btn" href={`/kanagawa/${area.slug}`}>
                 {area.name}の相談ページを見る
               </Link>
             </div>
@@ -52,7 +52,7 @@ export default function KanagawaAreaPage() {
         <h2>相談窓口</h2>
         <div className="card">
           <p>緊急入居の相談は無料相談フォームからお知らせください。</p>
-          <Link className="cta" href="/consultation">
+          <Link className="btn btn-consult" href="/consultation">
             無料相談へ進む
           </Link>
         </div>

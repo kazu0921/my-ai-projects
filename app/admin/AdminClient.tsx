@@ -29,6 +29,10 @@ export default function AdminClient() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
+  const monthlyConsultations = 42;
+  const monthlyContracts = 9;
+  const monthlyRevenue = 5400000;
+
   const selectedFacility = useMemo(
     () => facilities.find((facility) => facility.slug === selectedSlug) ?? null,
     [facilities, selectedSlug]
@@ -166,7 +170,7 @@ export default function AdminClient() {
             placeholder="管理パスワード"
           />
           {error && <p className="error">{error}</p>}
-          <button className="cta" type="button" onClick={handleLogin}>
+          <button className="btn" type="button" onClick={handleLogin}>
             ログイン
           </button>
         </div>
@@ -176,6 +180,17 @@ export default function AdminClient() {
 
   return (
     <div>
+      <section className="section">
+        <h2>運用ダッシュボード</h2>
+        <div className="cards">
+          <div className="card"><h3>月別相談数</h3><p>{monthlyConsultations}件</p></div>
+          <div className="card"><h3>成約数</h3><p>{monthlyContracts}件</p></div>
+          <div className="card"><h3>成果報酬金額</h3><p>{monthlyRevenue.toLocaleString()}円</p></div>
+          <div className="card"><h3>施設別成果</h3><p>上位施設: みなとみらい医療対応ホーム</p></div>
+          <div className="card"><h3>エリア別CV</h3><p>横浜市: 31% / 川崎市: 24%</p></div>
+        </div>
+      </section>
+
       <section className="section">
         <h2>施設一覧</h2>
         <div className="cards">
@@ -193,7 +208,7 @@ export default function AdminClient() {
                 </option>
               ))}
             </select>
-            <button className="cta secondary" type="button" onClick={handleNew}>
+            <button className="btn" type="button" onClick={handleNew}>
               新規作成フォーム
             </button>
           </div>
@@ -297,10 +312,10 @@ export default function AdminClient() {
             {error && <p className="error">{error}</p>}
             {message && <p>{message}</p>}
             <div className="cta-row">
-              <button className="cta" type="button" onClick={handleSave}>
+              <button className="btn" type="button" onClick={handleSave}>
                 保存する
               </button>
-              <button className="cta secondary" type="button" onClick={handleDelete}>
+              <button className="btn" type="button" onClick={handleDelete}>
                 削除する
               </button>
             </div>

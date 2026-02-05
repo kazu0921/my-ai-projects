@@ -1,6 +1,6 @@
 # my-ai-projects
 
-神奈川県向け「医療依存度が高い方向け老人ホーム相談・検索プラットフォーム」v1 を実装しています。
+神奈川県向け「医療対応 介護入居相談センター（神奈川）」v1.0（MVP完成版）を実装しています。
 
 ## フォルダ構成（主要）
 ```
@@ -47,7 +47,8 @@
 │   └── facilitySearch.ts            # 検索フィルタリングロジック
 ├── tests
 │   └── facilitySearch.test.ts       # 検索ロジックのテスト
-├── kanagawa-platform.md             # 設計書
+├── kanagawa-platform.md             # 初期設計書
+├── v1-product-output.md            # v1.0 UI/UX・事業設計出力
 ├── next.config.js
 ├── package.json
 └── tsconfig.json

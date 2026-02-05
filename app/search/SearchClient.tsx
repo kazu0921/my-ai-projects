@@ -157,10 +157,10 @@ export default function SearchClient({ facilities }: SearchClientProps) {
               <p>空室状況: {facility.availability}</p>
               <p>{facility.summary}</p>
               <div className="cta-row">
-                <Link className="cta secondary" href={`/facilities/${facility.slug}`}>
+                <Link className="btn" href={`/facilities/${facility.slug}`}>
                   詳細を見る
                 </Link>
-                <Link className="cta" href="/consultation">
+                <Link className="btn btn-consult" href="/consultation">
                   この施設について相談
                 </Link>
               </div>

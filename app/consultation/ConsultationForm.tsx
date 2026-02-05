@@ -162,7 +162,7 @@ export default function ConsultationForm() {
       />
       <input type="hidden" name="startedAt" value={formState.startedAt} />
       {serverError && <p className="error">{serverError}</p>}
-      <button className="cta" type="submit" disabled={submitting}>
+      <button className="btn btn-consult" type="submit" disabled={submitting}>
         {submitting ? "送信中..." : "無料相談を送信する"}
       </button>
     </form>

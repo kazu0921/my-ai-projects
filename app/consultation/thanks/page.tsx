@@ -21,10 +21,10 @@ export default function ConsultationThanksPage() {
           緊急の場合はお電話でのご相談も可能です。
         </p>
         <div className="cta-row">
-          <Link className="cta" href="/">
+          <Link className="btn" href="/">
             トップに戻る
           </Link>
-          <Link className="cta secondary" href="/search">
+          <Link className="btn" href="/search">
             施設一覧を見る
           </Link>
         </div>
