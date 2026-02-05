@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import facilities from "@/data/facilities.json";
 import type { Facility } from "@/types/facility";
