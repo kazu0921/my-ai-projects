@@ -84,11 +84,61 @@ export default function HomePage() {
           <p className="visual-caption">公的窓口に近い、静かな情報整理</p>
         </div>
       </section>
+      <section className="section flow-section" aria-label="相談フロー図解">
+        <div className="section-heading">
+          <h2>相談の流れ（図解）</h2>
+          <span className="badge badge-muted">見てわかる3ステップ</span>
+        </div>
+        <div className="flow-cards">
+          <div className="flow-card">
+            <div className="flow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="4" width="14" height="16" rx="2" fill="#f1f4f8" stroke="#7c90ad" />
+                <path d="M8 8h8M8 12h8M8 16h5" stroke="#7c90ad" strokeWidth="1.4" />
+                <path d="M6.5 6.5l1 1 2-2" stroke="#7c90ad" strokeWidth="1.4" />
+              </svg>
+            </div>
+            <p>医療状況を確認</p>
+          </div>
+          <div className="flow-line" aria-hidden="true">→</div>
+          <div className="flow-card">
+            <div className="flow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="6" width="16" height="12" rx="2" fill="#f1f4f8" stroke="#7c90ad" />
+                <path d="M8 9h8M8 12h8" stroke="#7c90ad" strokeWidth="1.4" />
+                <path d="M16.5 6.5v6" stroke="#7c90ad" strokeWidth="1.4" />
+                <path d="M13.5 9.5h6" stroke="#7c90ad" strokeWidth="1.4" />
+              </svg>
+            </div>
+            <p>入居できる施設を整理</p>
+          </div>
+          <div className="flow-line" aria-hidden="true">→</div>
+          <div className="flow-card">
+            <div className="flow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 17c0 1.6-1.3 3-3 3" stroke="#7c90ad" strokeWidth="1.6" />
+                <path d="M14 6c1.7 0 3 1.4 3 3" stroke="#7c90ad" strokeWidth="1.6" />
+                <circle cx="8" cy="14" r="3" fill="#f1f4f8" stroke="#7c90ad" />
+                <circle cx="16" cy="10" r="3" fill="#f1f4f8" stroke="#7c90ad" />
+              </svg>
+            </div>
+            <p>見学・手続きまで支援</p>
+          </div>
+        </div>
+      </section>
 
       <section className="section" id="role">
         <div className="section-heading">
           <h2>この窓口の役割</h2>
           <span className="badge badge-muted">比較ではなく相談</span>
+        </div>
+        <div className="section-illustration" aria-hidden="true">
+          <svg viewBox="0 0 220 60">
+            <rect x="10" y="14" width="56" height="32" rx="8" fill="#f1f4f8" />
+            <rect x="78" y="10" width="56" height="40" rx="8" fill="#f1f4f8" />
+            <rect x="146" y="18" width="56" height="28" rx="8" fill="#f1f4f8" />
+            <path d="M26 30h20M92 30h20M160 30h20" stroke="#7c90ad" strokeWidth="2" />
+          </svg>
         </div>
         <div className="cards icon-cards">
           <div className="card">
@@ -143,8 +193,11 @@ export default function HomePage() {
           <svg viewBox="0 0 280 200">
             <path d="M35 30h80l40 20 50-10 40 30-10 40-60 40-80-10-50-30z" fill="none" stroke="#c8d2e2" strokeWidth="2" />
             <circle cx="80" cy="80" r="6" fill="#c8d2e2" />
-            <circle cx="150" cy="70" r="6" fill="#c8d2e2" />
+            <circle cx="140" cy="70" r="6" fill="#c8d2e2" />
             <circle cx="200" cy="120" r="6" fill="#c8d2e2" />
+            <text x="70" y="72" fontSize="10" fill="#7c90ad">横浜</text>
+            <text x="125" y="62" fontSize="10" fill="#7c90ad">川崎</text>
+            <text x="188" y="114" fontSize="10" fill="#7c90ad">湘南</text>
           </svg>
         </div>
         <div className="area-grid">
@@ -172,6 +225,14 @@ export default function HomePage() {
 
       <section className="section" id="steps">
         <h2>ご相談の進み方</h2>
+        <div className="section-illustration" aria-hidden="true">
+          <svg viewBox="0 0 220 60">
+            <path d="M12 36h60l20-14 20 14h76" fill="none" stroke="#7c90ad" strokeWidth="2" />
+            <circle cx="12" cy="36" r="6" fill="#f1f4f8" stroke="#7c90ad" />
+            <circle cx="92" cy="22" r="6" fill="#f1f4f8" stroke="#7c90ad" />
+            <circle cx="132" cy="36" r="6" fill="#f1f4f8" stroke="#7c90ad" />
+          </svg>
+        </div>
         <div className="stepper">
           <div className="step">
             <span className="step-index">1</span>

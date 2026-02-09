@@ -132,6 +132,18 @@ main {
   pointer-events: none;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -40px;
+  width: 200px;
+  height: 200px;
+  background: rgba(90, 111, 143, 0.08);
+  border-radius: 45% 55% 60% 40%;
+  filter: blur(0.5px);
+}
+
 .hero-grid {
   display: grid;
   gap: 20px;
@@ -365,6 +377,56 @@ main {
 
 .btn-consult:hover {
   background: var(--cta-hover);
+}
+
+.flow-section {
+  border-style: dashed;
+}
+
+.flow-cards {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 0 4px;
+  scroll-snap-type: x mandatory;
+}
+
+.flow-card {
+  min-width: 150px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fffdfa;
+  display: grid;
+  gap: 8px;
+  scroll-snap-align: start;
+}
+
+.flow-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--sub-border);
+  display: grid;
+  place-items: center;
+  background: var(--surface-strong);
+}
+
+.flow-line {
+  display: flex;
+  align-items: center;
+  color: var(--sub);
+  font-size: 14px;
+}
+
+.section-illustration {
+  margin: 10px 0 8px;
+  opacity: 0.7;
+}
+
+.section-illustration svg {
+  width: 100%;
+  height: auto;
 }
 
 .area-grid {
