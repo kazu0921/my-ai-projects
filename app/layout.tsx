@@ -41,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/kanagawa">エリア別相談</Link>
               <Link href="/search">施設検索</Link>
               <Link href="/consultation">無料相談</Link>
+              <Link href="/for-facilities">施設向け掲載案内</Link>
               <Link href="/about">運営情報</Link>
               <Link href="/admin">管理</Link>
             </nav>
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/kanagawa">エリア別相談</Link>
                 <Link href="/search">施設検索</Link>
                 <Link href="/consultation">無料相談</Link>
+                <Link href="/for-facilities">施設向け掲載案内</Link>
                 <Link href="/about">運営情報</Link>
                 <Link href="/admin">管理</Link>
               </div>
