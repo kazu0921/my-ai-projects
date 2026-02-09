@@ -37,13 +37,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="brand">
               医療対応 介護入居相談センター（神奈川）
             </Link>
-            <nav className="nav-links">
+            <nav className="nav-links desktop-nav">
               <Link href="/kanagawa">エリア別相談</Link>
               <Link href="/search">施設検索</Link>
               <Link href="/consultation">無料相談</Link>
               <Link href="/about">運営情報</Link>
               <Link href="/admin">管理</Link>
             </nav>
+            <details className="mobile-nav">
+              <summary>メニュー</summary>
+              <div className="mobile-nav-panel">
+                <Link href="/kanagawa">エリア別相談</Link>
+                <Link href="/search">施設検索</Link>
+                <Link href="/consultation">無料相談</Link>
+                <Link href="/about">運営情報</Link>
+                <Link href="/admin">管理</Link>
+              </div>
+            </details>
           </div>
         </header>
         <main>
@@ -55,6 +65,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p>神奈川県全域対応 / 比較・ランキングではなく相談支援に特化</p>
           </div>
         </footer>
+        <div className="mobile-consult-bar">
+          <Link href="/consultation" className="btn btn-consult">
+            無料で相談する（24時間受付）
+          </Link>
+        </div>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
