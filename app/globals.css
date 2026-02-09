@@ -108,12 +108,33 @@ main {
   font-size: 14px;
 }
 
+.mobile-nav[open] summary {
+  background: var(--surface-strong);
+}
+
 .hero {
   margin-top: 16px;
   padding: 28px 18px;
   border-radius: 14px;
   background: linear-gradient(180deg, var(--surface) 0%, var(--surface-strong) 100%);
   border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 10% 20%, rgba(90, 111, 143, 0.12), transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(142, 59, 70, 0.08), transparent 35%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 20px;
 }
 
 .hero h1 {
@@ -131,6 +152,28 @@ main {
   font-size: 16px;
 }
 
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-visual {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+}
+
+.hero-visual svg {
+  width: min(100%, 320px);
+  height: auto;
+}
+
+.visual-caption {
+  font-size: 13px;
+  color: var(--muted);
+}
+
 .badge {
   display: inline-block;
   padding: 5px 12px;
@@ -141,12 +184,44 @@ main {
   margin-bottom: 12px;
 }
 
+.badge-muted {
+  background: var(--surface-strong);
+}
+
+.hero-pills {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--sub-border);
+  font-size: 12px;
+  color: var(--sub);
+  background: #fff;
+}
+
 .section {
   margin-top: 18px;
   padding: 24px 18px;
   border-radius: 14px;
   background: var(--surface);
   border: 1px solid var(--border);
+}
+
+.section-muted {
+  background: var(--surface-strong);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .section h2 {
@@ -168,6 +243,23 @@ main {
   background: #fffdfa;
 }
 
+.icon-cards .card {
+  display: grid;
+  gap: 8px;
+}
+
+.icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--sub-border);
+  display: grid;
+  place-items: center;
+  color: var(--sub);
+  font-weight: 700;
+  background: var(--surface-strong);
+}
+
 .card h3 {
   margin: 0 0 8px;
   color: #3f5372;
@@ -186,6 +278,12 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.cta-note {
+  font-size: 12px;
+  color: var(--muted);
+  align-self: center;
 }
 
 .btn {
@@ -209,6 +307,65 @@ main {
 
 .btn-consult:hover {
   background: var(--cta-hover);
+}
+
+.area-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.area-card p {
+  margin: 4px 0 10px;
+}
+
+.area-accordion {
+  margin-top: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fffdf9;
+}
+
+.area-accordion summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--sub);
+}
+
+.area-list {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--sub);
+}
+
+.stepper {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fffdfa;
+}
+
+.step-index {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--sub-border);
+  display: grid;
+  place-items: center;
+  color: var(--sub);
+  font-weight: 700;
+  background: var(--surface-strong);
 }
 
 .form {
@@ -308,6 +465,23 @@ select {
 
   .hero h1 {
     font-size: 34px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: center;
+  }
+
+  .area-grid {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+
+  .stepper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .step {
+    grid-template-columns: 32px 1fr;
   }
 
   .section {

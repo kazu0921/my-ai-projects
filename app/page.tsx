@@ -15,87 +15,146 @@ export const metadata: Metadata = {
 
 type Area = { slug: string; name: string };
 const areaList = areas as Area[];
+const majorAreaSlugs = [
+  "yokohama",
+  "kawasaki",
+  "fujisawa",
+  "chigasaki",
+  "sagamihara",
+  "yokosuka",
+  "atsugi",
+  "hiratsuka"
+];
+const majorAreas = areaList.filter((area) => majorAreaSlugs.includes(area.slug));
+const otherAreas = areaList.filter((area) => !majorAreaSlugs.includes(area.slug));
 
 export default function HomePage() {
   return (
     <div>
-      <section className="hero">
-        <span className="badge">医療対応 介護入居相談センター（神奈川）</span>
-        <h1>
-          医療が必要になっても
-          <br />
-          入居できる介護施設は、あります。
-        </h1>
-        <p>
-          まだ決めなくて大丈夫です。
-          いまの状況を整理し、神奈川県内で受け入れ可能な候補を一緒に確認します。
-        </p>
+      <section className="hero hero-grid">
+        <div>
+          <span className="badge">医療対応 介護入居相談センター（神奈川）</span>
+          <h1>
+            医療が必要になっても
+            <br />
+            入居できる選択肢はあります。
+          </h1>
+          <p>比較ではなく、状況整理と意思決定の相談窓口です。</p>
+          <div className="cta-row">
+            <Link className="btn btn-consult" href="/consultation">
+              無料で相談する（24時間受付）
+            </Link>
+            <Link className="btn" href="/kanagawa">
+              対応エリアを見る
+            </Link>
+          </div>
+          <div className="hero-pills">
+            <span className="pill">まだ決めなくて大丈夫</span>
+            <span className="pill">神奈川県全域対応</span>
+            <span className="pill">医療条件の確認を代行</span>
+          </div>
+        </div>
+        <div className="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 240" role="img">
+            <rect x="10" y="20" width="300" height="200" rx="22" fill="#ffffff" />
+            <path d="M38 78h244v8H38z" fill="#d9e1ee" />
+            <path d="M38 106h190v8H38z" fill="#d9e1ee" />
+            <path d="M38 134h220v8H38z" fill="#d9e1ee" />
+            <circle cx="80" cy="175" r="18" fill="#c7d4e8" />
+            <circle cx="136" cy="175" r="18" fill="#c7d4e8" />
+            <circle cx="192" cy="175" r="18" fill="#c7d4e8" />
+            <path d="M238 158h50v34h-50z" fill="#e6b8bf" />
+          </svg>
+          <p className="visual-caption">公的窓口に近い、静かな情報整理</p>
+        </div>
+      </section>
+
+      <section className="section" id="role">
+        <div className="section-heading">
+          <h2>この窓口の役割</h2>
+          <span className="badge badge-muted">比較ではなく相談</span>
+        </div>
+        <div className="cards icon-cards">
+          <div className="card">
+            <div className="icon-circle">整</div>
+            <h3>状況整理</h3>
+            <p>今の医療状態と希望条件を短時間で整理します。</p>
+          </div>
+          <div className="card">
+            <div className="icon-circle">確</div>
+            <h3>候補確認</h3>
+            <p>医療対応条件の受け入れ可否を確認します。</p>
+          </div>
+          <div className="card">
+            <div className="icon-circle">歩</div>
+            <h3>次の一歩</h3>
+            <p>見学や手続きまで、無理のない順序で支援します。</p>
+          </div>
+        </div>
         <div className="cta-row">
           <Link className="btn btn-consult" href="/consultation">
             無料で相談する（24時間受付）
           </Link>
-          <Link className="btn" href="/kanagawa">
-            神奈川県の対応エリアを見る
-          </Link>
+          <span className="cta-note">匿名での相談も可能です</span>
         </div>
       </section>
 
-      <section className="section">
-        <h2>この窓口の役割</h2>
-        <div className="cards">
-          <div className="card">
-            <h3>比較ではなく、相談</h3>
-            <p>ランキングや過剰な訴求ではなく、今必要な情報だけを整理してご案内します。</p>
-          </div>
-          <div className="card">
-            <h3>公的機関に近い中立性</h3>
-            <p>売り込みを前提にせず、ご家族の不安と条件を優先して候補を絞ります。</p>
-          </div>
-          <div className="card">
-            <h3>医療対応の確認を代行</h3>
-            <p>胃ろう・経管栄養・インスリン・看取りなど、受け入れ可否を確認します。</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
+      <section className="section section-muted" id="area">
         <h2>神奈川県全域に対応しています</h2>
-        <p>横浜市・川崎市・藤沢市・茅ヶ崎市・相模原市を含む市区町村別ページをご用意しています。</p>
-        <div className="cards">
-          {areaList.map((area) => (
-            <div className="card" key={area.slug}>
+        <p>主要エリアから順にご案内します。詳細は市区町村別ページで確認できます。</p>
+        <div className="area-grid">
+          {majorAreas.map((area) => (
+            <div className="card area-card" key={area.slug}>
               <h3>{area.name}</h3>
+              <p>医療対応の受け入れ事情を確認</p>
               <Link className="btn" href={`/kanagawa/${area.slug}`}>
-                {area.name}の相談ページへ
+                相談ページへ
               </Link>
             </div>
           ))}
         </div>
+        <details className="area-accordion">
+          <summary>すべての市区町村を見る</summary>
+          <div className="area-list">
+            {otherAreas.map((area) => (
+              <Link key={area.slug} href={`/kanagawa/${area.slug}`}>
+                {area.name}
+              </Link>
+            ))}
+          </div>
+        </details>
       </section>
 
-      <section className="section">
+      <section className="section" id="steps">
         <h2>ご相談の進み方</h2>
-        <div className="cards">
-          <div className="card">
-            <h3>1. 状況をうかがう</h3>
-            <p>現在の医療処置、希望エリア、急ぎ度を確認します。</p>
+        <div className="stepper">
+          <div className="step">
+            <span className="step-index">1</span>
+            <div>
+              <h3>状況を確認</h3>
+              <p>医療処置と希望条件を共有します。</p>
+            </div>
           </div>
-          <div className="card">
-            <h3>2. 候補を確認する</h3>
-            <p>受け入れ可否と費用感を照らし合わせ、候補を絞ります。</p>
+          <div className="step">
+            <span className="step-index">2</span>
+            <div>
+              <h3>候補を整理</h3>
+              <p>受け入れ可否と費用感を確認します。</p>
+            </div>
           </div>
-          <div className="card">
-            <h3>3. 次の一歩を決める</h3>
-            <p>見学や手続きの進め方を、無理のない順序でご案内します。</p>
+          <div className="step">
+            <span className="step-index">3</span>
+            <div>
+              <h3>次の一歩へ</h3>
+              <p>見学・手続きの段取りを支援します。</p>
+            </div>
           </div>
         </div>
         <div className="cta-row">
           <Link className="btn btn-consult" href="/consultation">
             無料で相談する（24時間受付）
           </Link>
-          <Link className="btn" href="/search">
-            施設検索ページを見る
-          </Link>
+          <span className="cta-note">24時間以内に折り返し連絡</span>
         </div>
       </section>
     </div>
