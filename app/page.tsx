@@ -37,14 +37,14 @@ export default function HomePage() {
           <h1>
             医療が必要になっても
             <br />
-            入居できる選択肢はあります。
+            入居できる道は、あります。
           </h1>
-          <p>比較ではなく、状況整理と意思決定の相談窓口です。</p>
+          <p>比較ではなく、いまの状況を一緒に整える窓口です。</p>
           <details className="hero-detail">
-            <summary>相談窓口としてできること</summary>
+            <summary>相談窓口でできること</summary>
             <p>
-              医療条件の確認、候補整理、見学調整までを落ち着いて進めます。売り込みではなく、
-              ご家族の不安を整えることを優先します。
+              医療面の条件が合うか、こちらで確認します。見学や手続きまで、
+              無理なく進められるようにお手伝いします。
             </p>
           </details>
           <div className="cta-row">
@@ -55,28 +55,31 @@ export default function HomePage() {
               対応エリアを見る
             </Link>
           </div>
+          <p className="cta-note">無理な営業や即決のご案内は行いません。</p>
           <div className="hero-pills">
             <span className="pill">
-              <span className="pill-icon">安</span>まだ決めなくて大丈夫
+              <span className="pill-icon">静</span>比較ではありません
+            </span>
+            <span className="pill">
+              <span className="pill-icon">安</span>今すぐ決めなくて大丈夫
             </span>
             <span className="pill">
               <span className="pill-icon">県</span>神奈川県全域対応
-            </span>
-            <span className="pill">
-              <span className="pill-icon">医</span>医療条件の確認を代行
             </span>
           </div>
         </div>
         <div className="hero-visual" aria-hidden="true">
           <svg viewBox="0 0 320 240" role="img">
             <rect x="10" y="20" width="300" height="200" rx="22" fill="#ffffff" />
-            <path d="M38 78h244v8H38z" fill="#d9e1ee" />
-            <path d="M38 106h190v8H38z" fill="#d9e1ee" />
-            <path d="M38 134h220v8H38z" fill="#d9e1ee" />
-            <circle cx="80" cy="175" r="18" fill="#c7d4e8" />
-            <circle cx="136" cy="175" r="18" fill="#c7d4e8" />
-            <circle cx="192" cy="175" r="18" fill="#c7d4e8" />
-            <path d="M238 158h50v34h-50z" fill="#e6b8bf" />
+            <rect x="36" y="50" width="248" height="36" rx="10" fill="#f1f4f8" />
+            <rect x="36" y="98" width="248" height="36" rx="10" fill="#f1f4f8" />
+            <rect x="36" y="146" width="248" height="36" rx="10" fill="#f1f4f8" />
+            <rect x="46" y="60" width="16" height="16" rx="4" fill="#c5d2e5" />
+            <rect x="46" y="108" width="16" height="16" rx="4" fill="#c5d2e5" />
+            <rect x="46" y="156" width="16" height="16" rx="4" fill="#c5d2e5" />
+            <rect x="70" y="60" width="160" height="8" rx="4" fill="#d5deec" />
+            <rect x="70" y="108" width="140" height="8" rx="4" fill="#d5deec" />
+            <rect x="70" y="156" width="150" height="8" rx="4" fill="#d5deec" />
           </svg>
           <p className="visual-caption">公的窓口に近い、静かな情報整理</p>
         </div>
@@ -89,19 +92,40 @@ export default function HomePage() {
         </div>
         <div className="cards icon-cards">
           <div className="card">
-            <div className="icon-circle">整</div>
+            <div className="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="4" width="14" height="16" rx="2" fill="#edf1f7" stroke="#7c90ad" />
+                <path d="M8 8h8M8 12h8M8 16h5" stroke="#7c90ad" strokeWidth="1.4" />
+                <path d="M6.5 6.5l1 1 2-2" stroke="#7c90ad" strokeWidth="1.4" />
+              </svg>
+            </div>
             <h3>状況整理</h3>
-            <p>今の医療状態と希望条件を短時間で整理します。</p>
+            <p>今の医療状態と希望条件をわかりやすく整えます。</p>
           </div>
           <div className="card">
-            <div className="icon-circle">確</div>
+            <div className="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4.5" y="6" width="15" height="11" rx="2" fill="#edf1f7" stroke="#7c90ad" />
+                <path d="M8 9h5" stroke="#7c90ad" strokeWidth="1.4" />
+                <path d="M8 12h8" stroke="#7c90ad" strokeWidth="1.4" />
+                <circle cx="18" cy="10" r="3" fill="#e6b8bf" />
+                <path d="M17.2 10l1 1.1 1.6-2" stroke="#7c90ad" strokeWidth="1.4" />
+              </svg>
+            </div>
             <h3>候補確認</h3>
-            <p>医療対応条件の受け入れ可否を確認します。</p>
+            <p>医療面の条件が合うか、こちらで確認します。</p>
           </div>
           <div className="card">
-            <div className="icon-circle">歩</div>
+            <div className="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17c0 1.7-1.4 3-3 3" stroke="#7c90ad" strokeWidth="1.6" />
+                <path d="M14 6c1.7 0 3 1.4 3 3" stroke="#7c90ad" strokeWidth="1.6" />
+                <circle cx="8" cy="14" r="3" fill="#edf1f7" stroke="#7c90ad" />
+                <circle cx="16" cy="10" r="3" fill="#edf1f7" stroke="#7c90ad" />
+              </svg>
+            </div>
             <h3>次の一歩</h3>
-            <p>見学や手続きまで、無理のない順序で支援します。</p>
+            <p>見学や手続きまで、無理なく進めます。</p>
           </div>
         </div>
         <div className="cta-row">
