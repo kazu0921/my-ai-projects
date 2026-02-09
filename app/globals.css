@@ -174,6 +174,26 @@ main {
   color: var(--muted);
 }
 
+.hero-detail {
+  margin-top: 10px;
+  border: 1px dashed var(--sub-border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hero-detail summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--sub);
+}
+
+.hero-detail p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 .badge {
   display: inline-block;
   padding: 5px 12px;
@@ -202,6 +222,21 @@ main {
   font-size: 12px;
   color: var(--sub);
   background: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pill-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid var(--sub-border);
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  color: var(--sub);
+  background: var(--surface-strong);
 }
 
 .section {
@@ -210,6 +245,22 @@ main {
   border-radius: 14px;
   background: var(--surface);
   border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 90% 20%, rgba(90, 111, 143, 0.08), transparent 50%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section-muted {
@@ -246,6 +297,7 @@ main {
 .icon-cards .card {
   display: grid;
   gap: 8px;
+  background: linear-gradient(180deg, #fff 0%, #fbf9f3 100%);
 }
 
 .icon-circle {
@@ -314,6 +366,16 @@ main {
   gap: 12px;
 }
 
+.area-map {
+  margin: 12px 0 6px;
+  opacity: 0.6;
+}
+
+.area-map svg {
+  width: 100%;
+  height: auto;
+}
+
 .area-card p {
   margin: 4px 0 10px;
 }
@@ -343,6 +405,18 @@ main {
 .stepper {
   display: grid;
   gap: 12px;
+  position: relative;
+  padding-left: 8px;
+}
+
+.stepper::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: #d8d0c3;
 }
 
 .step {

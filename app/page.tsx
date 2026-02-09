@@ -40,6 +40,13 @@ export default function HomePage() {
             入居できる選択肢はあります。
           </h1>
           <p>比較ではなく、状況整理と意思決定の相談窓口です。</p>
+          <details className="hero-detail">
+            <summary>相談窓口としてできること</summary>
+            <p>
+              医療条件の確認、候補整理、見学調整までを落ち着いて進めます。売り込みではなく、
+              ご家族の不安を整えることを優先します。
+            </p>
+          </details>
           <div className="cta-row">
             <Link className="btn btn-consult" href="/consultation">
               無料で相談する（24時間受付）
@@ -49,9 +56,15 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="hero-pills">
-            <span className="pill">まだ決めなくて大丈夫</span>
-            <span className="pill">神奈川県全域対応</span>
-            <span className="pill">医療条件の確認を代行</span>
+            <span className="pill">
+              <span className="pill-icon">安</span>まだ決めなくて大丈夫
+            </span>
+            <span className="pill">
+              <span className="pill-icon">県</span>神奈川県全域対応
+            </span>
+            <span className="pill">
+              <span className="pill-icon">医</span>医療条件の確認を代行
+            </span>
           </div>
         </div>
         <div className="hero-visual" aria-hidden="true">
@@ -102,6 +115,14 @@ export default function HomePage() {
       <section className="section section-muted" id="area">
         <h2>神奈川県全域に対応しています</h2>
         <p>主要エリアから順にご案内します。詳細は市区町村別ページで確認できます。</p>
+        <div className="area-map" aria-hidden="true">
+          <svg viewBox="0 0 280 200">
+            <path d="M35 30h80l40 20 50-10 40 30-10 40-60 40-80-10-50-30z" fill="none" stroke="#c8d2e2" strokeWidth="2" />
+            <circle cx="80" cy="80" r="6" fill="#c8d2e2" />
+            <circle cx="150" cy="70" r="6" fill="#c8d2e2" />
+            <circle cx="200" cy="120" r="6" fill="#c8d2e2" />
+          </svg>
+        </div>
         <div className="area-grid">
           {majorAreas.map((area) => (
             <div className="card area-card" key={area.slug}>
